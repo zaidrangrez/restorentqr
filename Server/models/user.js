@@ -1,3 +1,5 @@
+import mongoose from 'mongoose'
+
 const userSchema = new mongoose.Schema(
     {
         name:{
@@ -24,6 +26,11 @@ const userSchema = new mongoose.Schema(
 
         totalOrders:{
             type:Number,
+        },
+        accountType:{
+            type:String,
+            enum:["REGISTERED","GUEST"],
+            default:"REGISTERED"
         },
 
         loyalPoints:{
